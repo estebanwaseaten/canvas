@@ -1,0 +1,3 @@
+/home/daniel/projects/testing/deltascope_cpp/libs/canvas/build/CMakeFiles/canvas.dir
+/home/daniel/projects/testing/deltascope_cpp/libs/canvas/build/CMakeFiles/edit_cache.dir
+/home/daniel/projects/testing/deltascope_cpp/libs/canvas/build/CMakeFiles/rebuild_cache.dir
