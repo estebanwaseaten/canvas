@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/daniel/projects/testing/deltascope_cpp/libs/canvas/libcanvas.pdb"
-  "/home/daniel/projects/testing/deltascope_cpp/libs/canvas/libcanvas.so"
+  "/home/wegkamp/development/lambdascope/libs/canvas/libcanvas.pdb"
+  "/home/wegkamp/development/lambdascope/libs/canvas/libcanvas.so"
   "CMakeFiles/canvas.dir/src/canvas.cpp.o"
   "CMakeFiles/canvas.dir/src/canvas.cpp.o.d"
   "CMakeFiles/canvas.dir/src/canvasutils.cpp.o"

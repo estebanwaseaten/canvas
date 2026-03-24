@@ -1,7 +1,7 @@
-CMakeFiles/canvas.dir/src/element.cpp.o: \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/src/element.cpp \
+/home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/element.cpp.o: \
+ /home/wegkamp/development/lambdascope/libs/canvas/src/element.cpp \
  /usr/include/stdc-predef.h \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/include/canvas/canvas.h \
+ /home/wegkamp/development/lambdascope/libs/canvas/include/canvas/canvas.h \
  /usr/include/c++/12/string \
  /usr/include/aarch64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/12/bits/os_defines.h \
@@ -129,7 +129,7 @@ CMakeFiles/canvas.dir/src/element.cpp.o: \
  /usr/include/libdrm/drm.h /usr/include/xf86drmMode.h \
  /usr/include/libdrm/drm_mode.h \
  /usr/lib/gcc/aarch64-linux-gnu/12/include/stdbool.h \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/include/canvas/element.h \
+ /home/wegkamp/development/lambdascope/libs/canvas/include/canvas/element.h \
  /usr/include/c++/12/vector /usr/include/c++/12/bits/stl_uninitialized.h \
  /usr/include/c++/12/bits/stl_vector.h \
  /usr/include/c++/12/bits/stl_bvector.h \
@@ -170,5 +170,5 @@ CMakeFiles/canvas.dir/src/element.cpp.o: \
  /usr/include/c++/12/bits/basic_ios.tcc \
  /usr/include/c++/12/bits/ostream.tcc /usr/include/c++/12/istream \
  /usr/include/c++/12/bits/istream.tcc \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/include/canvas/geometry.h \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/src/debug.h
+ /home/wegkamp/development/lambdascope/libs/canvas/include/canvas/geometry.h \
+ /home/wegkamp/development/lambdascope/libs/canvas/src/debug.h

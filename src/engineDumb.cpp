@@ -69,6 +69,7 @@ engineDumb::engineDumb()
         {
             DEBUG_MSG("Could not find connected Connector.");
             valid = false;
+            return;
         }
         else
         {
@@ -83,21 +84,26 @@ engineDumb::engineDumb()
         }
     }
 
-
+    int ret;
     //hardware buffers:
-    createBuffer( xres, yres, 32, &buffers[0] );    //initial back buffer
-    createBuffer( xres, yres, 32, &buffers[1] );    // initial front buffer
+    ret = createBuffer( xres, yres, 32, &buffers[0] );    //initial back buffer
+    if( ret < 0 )
+    { valid = false; }
+
+    ret = createBuffer( xres, yres, 32, &buffers[1] );    // initial front buffer
+    if( ret < 0 )
+    { valid = false; }
 
     //for testing only
     memset(buffers[0].map, 0, buffers[0].size);       //back buffer
     memset(buffers[1].map, 0xff, buffers[1].size);    //front buffer
 
-    int ret;
     ret = drmModeSetCrtc(card, cardCrtc->crtc_id, buffers[indexFront].dumbBuffer, 0, 0, &cardConnector->connector_id, 1, preferredMode );
     if( ret )
     {
         DEBUG_MSG( "drmModeSetCrtc() failed! returned: " << ret);
         valid = false;
+        return;
     }
     else
     {
@@ -127,6 +133,9 @@ engineDumb::~engineDumb()
 
 void engineDumb::initWithFirstConnectedConnector()    //finds first connected connector! also Encoder and Crtc
 {
+    if( !valid )
+        return;
+
     cardConnector = NULL;
     if( cardInfo == NULL )
     {
@@ -187,6 +196,12 @@ void engineDumb::initWithFirstConnectedConnector()    //finds first connected co
 
 void engineDumb::getBackBuffer( void **bb, uint32_t *ppL )
 {
+    if( !valid )
+    {
+        *bb = NULL;
+        *ppL = NULL;
+        return;
+    }
     //cout << buffers[indexBack].map32 << endl;
     //cout << buffers[indexBack].map << endl;
     *bb = (void*)buffers[indexBack].map32;
@@ -268,6 +283,9 @@ bool engineDumb::isValid()
 
 void engineDumb::swapBuffer()
 {
+    if( !valid )
+    { return; }
+
     uint8_t temp = indexFront;  //swap the indices --> swap the buffers!
     indexFront = indexBack;
     indexBack = temp;
@@ -284,6 +302,9 @@ void engineDumb::swapBuffer()
 
 void engineDumb::clearBackBuffer()
 {
+    if( !valid )
+    { return; }
+
     memset(buffers[indexBack].map, 0, buffers[indexBack].size);
     //DEBUG_MSG("clearBuffer()");
 }
@@ -295,6 +316,8 @@ void engineDumb::clearBackBuffer()
 //https://www.mat.univie.ac.at/~kriegl/Skripten/CG/node35.html
 void engineDumb::drawLine( uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint32_t color )
 {
+    if( !valid )
+    { return; }
     //1. special cases:
     //horizontal line
     if ( y1 == y2 )
@@ -406,6 +429,9 @@ void engineDumb::drawLine( uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, u
 
 void engineDumb::drawStripedLine( uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t linepx, uint16_t nolinepx, uint32_t color )
 {
+    if( !valid )
+    { return; }
+
     uint32_t lineCounter = 0;
     bool line = true;
     uint32_t nolineCounter = 0;
@@ -627,6 +653,9 @@ void engineDumb::drawStripedLine( uint16_t x1, uint16_t y1, uint16_t x2, uint16_
 
 void engineDumb::drawFrame( uint16_t x1, uint16_t y1, uint16_t dx, uint16_t dy, uint32_t color )
 {
+    if( !valid )
+    { return; }
+
     drawLine( x1, y1, x1 + dx, y1, color );
     drawLine( x1, y1 + dy, x1 + dx, y1 + dy, color );
 
@@ -636,6 +665,9 @@ void engineDumb::drawFrame( uint16_t x1, uint16_t y1, uint16_t dx, uint16_t dy, 
 
 void engineDumb::drawBox( uint16_t x1, uint16_t y1, uint16_t dx, uint16_t dy, uint32_t color )
 {
+    if( !valid )
+    { return; }
+
     uint16_t x2 = x1 + dx;
     uint16_t y2 = y1 + dy;
     //check bounds:
@@ -672,6 +704,9 @@ void engineDumb::drawBox( uint16_t x1, uint16_t y1, uint16_t dx, uint16_t dy, ui
 //not sure if this works
 void engineDumb::insertRegion( uint32_t *region, uint16_t x, uint16_t y, uint16_t dx, uint16_t dy)
 {
+    if( !valid )
+    { return; }
+
     int pixelsPerLine = buffers[indexBack].pitch_in_pixels;
     int bytesPerLine = buffers[indexBack].pitch;
     uint8_t *regionInBytes = (uint8_t *)region;
@@ -698,6 +733,9 @@ void engineDumb::setPixel( uint32_t x, uint32_t y, uint8_t r, uint8_t g, uint8_t
 
 void engineDumb::setPixel( uint32_t x, uint32_t y, uint32_t color )             //safe function (no buffer overflow possible --> overhead)
 {
+    if( !valid )
+    { return; }
+
     uint32_t offset32 = buffers[indexBack].pitch_in_pixels * y + x;    //offset in pixels
 
     if ( offset32 < buffers[indexBack].size_in_pixels )    //size is in bytes
@@ -716,6 +754,9 @@ void engineDumb::setPixel( uint32_t x, uint32_t y, uint32_t color )             
 
 void engineDumb::testfunction()
 {
+    if( !valid )
+    { return; }
+
     //DEBUG_MSG("engineDumb::testfunction()");
     setPixel( 1, 1, 255 );    //does not work
     setPixel( 2, 2, 255 );
@@ -750,6 +791,9 @@ void engineDumb::testfunction()
 // fill one horizontal line and then copy that into all the other lines...
 void engineDumb::fill( uint8_t r, uint8_t g, uint8_t b )
 {
+    if( !valid )
+    { return; }
+
     uint32_t color = (r << 16) | (g << 8) | b;
 
     //first line:
@@ -767,6 +811,9 @@ void engineDumb::fill( uint8_t r, uint8_t g, uint8_t b )
 
 void engineDumb::fillRnd()
 {
+    if( !valid )
+    { return; }
+
     float norm = 255.0/RAND_MAX;
 
     if( valid )

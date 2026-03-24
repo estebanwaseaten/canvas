@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dcanvas_EXPORTS
 
-CXX_INCLUDES = -I/home/daniel/projects/testing/deltascope_cpp/libs/canvas/include -I/usr/include/libdrm -I/home/daniel/projects/testing/deltascope_cpp/libs/canvas/src
+CXX_INCLUDES = -I/home/wegkamp/development/lambdascope/libs/canvas/include -I/usr/include/libdrm -I/home/wegkamp/development/lambdascope/libs/canvas/src
 
-CXX_FLAGS = -fPIC -std=gnu++17
+CXX_FLAGS = -fPIC -pg -std=gnu++17
 

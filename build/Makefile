@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/daniel/projects/testing/deltascope_cpp/libs/canvas
+CMAKE_SOURCE_DIR = /home/wegkamp/development/lambdascope
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/daniel/projects/testing/deltascope_cpp/libs/canvas/build
+CMAKE_BINARY_DIR = /home/wegkamp/development/lambdascope/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniel/projects/testing/deltascope_cpp/libs/canvas/build/CMakeFiles /home/daniel/projects/testing/deltascope_cpp/libs/canvas/build//CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/daniel/projects/testing/deltascope_cpp/libs/canvas/build/CMakeFiles 0
+	cd /home/wegkamp/development/lambdascope/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/wegkamp/development/lambdascope/build/CMakeFiles /home/wegkamp/development/lambdascope/libs/canvas/build//CMakeFiles/progress.marks
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/wegkamp/development/lambdascope/libs/canvas/build/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/wegkamp/development/lambdascope/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/wegkamp/development/lambdascope/libs/canvas/build/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,30 +103,31 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/wegkamp/development/lambdascope/libs/canvas/build/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/wegkamp/development/lambdascope/libs/canvas/build/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/wegkamp/development/lambdascope/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named canvas
+# Convenience name for target.
+/home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/rule:
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/rule
+.PHONY : /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/rule
 
-# Build rule for target.
-canvas: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 canvas
+# Convenience name for target.
+canvas: /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/rule
 .PHONY : canvas
 
 # fast build rule for target.
 canvas/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/build
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build
 .PHONY : canvas/fast
 
 src/canvas.o: src/canvas.cpp.o
@@ -134,7 +135,7 @@ src/canvas.o: src/canvas.cpp.o
 
 # target to build an object file
 src/canvas.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvas.cpp.o
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvas.cpp.o
 .PHONY : src/canvas.cpp.o
 
 src/canvas.i: src/canvas.cpp.i
@@ -142,7 +143,7 @@ src/canvas.i: src/canvas.cpp.i
 
 # target to preprocess a source file
 src/canvas.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvas.cpp.i
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvas.cpp.i
 .PHONY : src/canvas.cpp.i
 
 src/canvas.s: src/canvas.cpp.s
@@ -150,7 +151,7 @@ src/canvas.s: src/canvas.cpp.s
 
 # target to generate assembly for a file
 src/canvas.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvas.cpp.s
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvas.cpp.s
 .PHONY : src/canvas.cpp.s
 
 src/canvasutils.o: src/canvasutils.cpp.o
@@ -158,7 +159,7 @@ src/canvasutils.o: src/canvasutils.cpp.o
 
 # target to build an object file
 src/canvasutils.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvasutils.cpp.o
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvasutils.cpp.o
 .PHONY : src/canvasutils.cpp.o
 
 src/canvasutils.i: src/canvasutils.cpp.i
@@ -166,7 +167,7 @@ src/canvasutils.i: src/canvasutils.cpp.i
 
 # target to preprocess a source file
 src/canvasutils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvasutils.cpp.i
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvasutils.cpp.i
 .PHONY : src/canvasutils.cpp.i
 
 src/canvasutils.s: src/canvasutils.cpp.s
@@ -174,7 +175,7 @@ src/canvasutils.s: src/canvasutils.cpp.s
 
 # target to generate assembly for a file
 src/canvasutils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/canvasutils.cpp.s
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvasutils.cpp.s
 .PHONY : src/canvasutils.cpp.s
 
 src/element.o: src/element.cpp.o
@@ -182,7 +183,7 @@ src/element.o: src/element.cpp.o
 
 # target to build an object file
 src/element.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/element.cpp.o
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/element.cpp.o
 .PHONY : src/element.cpp.o
 
 src/element.i: src/element.cpp.i
@@ -190,7 +191,7 @@ src/element.i: src/element.cpp.i
 
 # target to preprocess a source file
 src/element.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/element.cpp.i
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/element.cpp.i
 .PHONY : src/element.cpp.i
 
 src/element.s: src/element.cpp.s
@@ -198,7 +199,7 @@ src/element.s: src/element.cpp.s
 
 # target to generate assembly for a file
 src/element.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/element.cpp.s
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/element.cpp.s
 .PHONY : src/element.cpp.s
 
 src/engineDumb.o: src/engineDumb.cpp.o
@@ -206,7 +207,7 @@ src/engineDumb.o: src/engineDumb.cpp.o
 
 # target to build an object file
 src/engineDumb.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/engineDumb.cpp.o
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/engineDumb.cpp.o
 .PHONY : src/engineDumb.cpp.o
 
 src/engineDumb.i: src/engineDumb.cpp.i
@@ -214,7 +215,7 @@ src/engineDumb.i: src/engineDumb.cpp.i
 
 # target to preprocess a source file
 src/engineDumb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/engineDumb.cpp.i
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/engineDumb.cpp.i
 .PHONY : src/engineDumb.cpp.i
 
 src/engineDumb.s: src/engineDumb.cpp.s
@@ -222,7 +223,7 @@ src/engineDumb.s: src/engineDumb.cpp.s
 
 # target to generate assembly for a file
 src/engineDumb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/engineDumb.cpp.s
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/engineDumb.cpp.s
 .PHONY : src/engineDumb.cpp.s
 
 src/geometry.o: src/geometry.cpp.o
@@ -230,7 +231,7 @@ src/geometry.o: src/geometry.cpp.o
 
 # target to build an object file
 src/geometry.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/geometry.cpp.o
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/geometry.cpp.o
 .PHONY : src/geometry.cpp.o
 
 src/geometry.i: src/geometry.cpp.i
@@ -238,7 +239,7 @@ src/geometry.i: src/geometry.cpp.i
 
 # target to preprocess a source file
 src/geometry.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/geometry.cpp.i
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/geometry.cpp.i
 .PHONY : src/geometry.cpp.i
 
 src/geometry.s: src/geometry.cpp.s
@@ -246,7 +247,7 @@ src/geometry.s: src/geometry.cpp.s
 
 # target to generate assembly for a file
 src/geometry.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/canvas.dir/build.make CMakeFiles/canvas.dir/src/geometry.cpp.s
+	cd /home/wegkamp/development/lambdascope/build && $(MAKE) $(MAKESILENT) -f /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/build.make /home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/geometry.cpp.s
 .PHONY : src/geometry.cpp.s
 
 # Help Target
@@ -284,6 +285,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/wegkamp/development/lambdascope/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -15,6 +15,10 @@
 canvas::canvas()
 {
     myEngine = new engineDumb();
+    if( !myEngine->isValid() )
+    {
+        
+    }
 }
 
 

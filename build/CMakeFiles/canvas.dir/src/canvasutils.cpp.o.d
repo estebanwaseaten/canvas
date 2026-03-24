@@ -1,7 +1,7 @@
-CMakeFiles/canvas.dir/src/canvasutils.cpp.o: \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/src/canvasutils.cpp \
+/home/wegkamp/development/lambdascope/libs/canvas/build/CMakeFiles/canvas.dir/src/canvasutils.cpp.o: \
+ /home/wegkamp/development/lambdascope/libs/canvas/src/canvasutils.cpp \
  /usr/include/stdc-predef.h \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/src/canvasutils.h \
+ /home/wegkamp/development/lambdascope/libs/canvas/src/canvasutils.h \
  /usr/include/xf86drm.h \
  /usr/lib/gcc/aarch64-linux-gnu/12/include/stdarg.h \
  /usr/include/aarch64-linux-gnu/sys/types.h /usr/include/features.h \
@@ -54,7 +54,7 @@ CMakeFiles/canvas.dir/src/canvasutils.cpp.o: \
  /usr/lib/gcc/aarch64-linux-gnu/12/include/stdbool.h \
  /usr/include/linux/fb.h /usr/include/linux/i2c.h \
  /usr/include/linux/vesa.h \
- /home/daniel/projects/testing/deltascope_cpp/libs/canvas/src/debug.h \
+ /home/wegkamp/development/lambdascope/libs/canvas/src/debug.h \
  /usr/include/c++/12/iostream \
  /usr/include/aarch64-linux-gnu/c++/12/bits/c++config.h \
  /usr/include/aarch64-linux-gnu/c++/12/bits/os_defines.h \
